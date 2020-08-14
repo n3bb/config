@@ -39,6 +39,9 @@ exec --no-startup-id compton
 # Run dunst (notifications)
 exec --no-startup-id dunst
 
+# Run i3-alternating-layouts (thanks olemartinorg from github)
+exec --no-startup-id ~/i3-alternating-layout/alternating_layouts.py
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -192,6 +195,10 @@ bar {
         status_command i3status
 }
 
+# fast google
+
+bindsym $mod+g exec --no-startup-id dmenu-universal-search
+
 # Remove titlebar so that gaps actually work
 for_window [class=".*"] border pixel 1
 
@@ -201,3 +208,4 @@ bindsym $mod+equal scratchpad show
 
 gaps inner 10
 gaps outer 30
+
